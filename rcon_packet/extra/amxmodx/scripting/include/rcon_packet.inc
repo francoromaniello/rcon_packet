@@ -9,7 +9,7 @@
  * The packet can be obtain by read_argv native
  *
  * @param ip 		ip address
- * @return bool		true for normal action, otherwise ignore the packet
+ * @return PLUGIN_CONTINUE for normal action or PLUGIN_HANDLED for ignore the packet
  */
 forward rcon_packet(const ip[]);
 
@@ -18,6 +18,6 @@ forward rcon_packet(const ip[]);
  * The packet can be obtain by read_argv native
  *
  * @param ip 		ip address
- * @return bool		true for normal action, otherwise ignore the packet
+ * @return PLUGIN_CONTINUE for normal action or PLUGIN_HANDLED for ignore the packet
  */
 forward rcon_challenge_packet(const ip[]);

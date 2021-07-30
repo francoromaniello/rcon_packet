@@ -32,10 +32,10 @@ bool PreProcessPacket(ReHookPreprocessPacket* /* chain */, uint8* data, unsigned
 	const char* argv1 = RegamedllApi::funcs()->cmd_argv(1);
 
 	if(!strcmp(argv0, "rcon")) {
-		return AmxxApi::execute_forward(rconForward, NET_AdrToString(srcAddr));
+		return AmxxApi::execute_forward(rconForward, NET_AdrToString(srcAddr)) == 0;
 	}
 	else if (!strcmp(argv0, "challenge") && !strcmp(argv1, "rcon")) {
-		return AmxxApi::execute_forward(challengeForward, NET_AdrToString(srcAddr));
+		return AmxxApi::execute_forward(challengeForward, NET_AdrToString(srcAddr)) == 0;
 	}
 
 	return true;

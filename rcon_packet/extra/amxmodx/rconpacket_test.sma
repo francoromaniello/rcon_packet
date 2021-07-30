@@ -23,9 +23,9 @@ public rcon_packet(const ip[]) {
 	
 	// Block sv_restart from rcon
 	if(equal(argv1, "sv_restart"))
-		return false;
+		return PLUGIN_HANDLED;
 	
-	return true;
+	return PLUGIN_CONTINUE;
 }
 
 public rcon_challenge_packet(const ip[]) {
@@ -37,5 +37,5 @@ public rcon_challenge_packet(const ip[]) {
 	
 	server_print("rcon challenge ip %s buffer: %s %s", ip, challenge, rcon);
 	
-	return true;
+	return PLUGIN_CONTINUE;
 }
